@@ -267,7 +267,7 @@ namespace FCP.Web
                 return default(T);
             }
             cookieValues = EncryptHelper.decrypt(cookieValues, encryptType);
-            return SerializerUtil.deserializeT<T>(cookieValues);
+            return SerializerFactory.BinarySerializer.DeserializeString<T>(cookieValues);
         }
     }
 }

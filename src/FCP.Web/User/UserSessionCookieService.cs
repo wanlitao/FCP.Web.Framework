@@ -45,12 +45,12 @@ namespace FCP.Web
         public void saveModelToSessionAndCookie(T model, bool isInCookie,
             Func<T, UserBase> toUserBase, HttpContextBase httpContext)
         {
-            string SerializeString = SerializerUtil.serializeObject(model);
+            string SerializeString = SerializerFactory.BinarySerializer.SerializeString(model);
             SessionUtil.saveSession(this._infoCacheName, SerializeString, httpContext);
             if (isInCookie)
             {
                 UserBase userBase = toUserBase(model);
-                CookieUtil.setCookie(this._infoCacheName, SerializerUtil.serializeObject(userBase), httpContext);
+                CookieUtil.setCookie(this._infoCacheName, SerializerFactory.BinarySerializer.SerializeString(userBase), httpContext);
             }
         }
 

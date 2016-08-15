@@ -90,7 +90,7 @@ namespace FCP.Web
         /// <param name="httpContext"></param>
         public static void setSeeion(string keyName, object obj, HttpContextBase httpContext)
         {
-            saveSession(keyName, SerializerUtil.serializeObject(obj), httpContext);
+            saveSession(keyName, SerializerFactory.BinarySerializer.SerializeString(obj), httpContext);
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace FCP.Web
         public static T forSession<T>(string sessionName, HttpContextBase httpContext)
         {
             string sessionValues = SessionUtil.getSessionValue(sessionName, httpContext);
-            return SerializerUtil.deserializeT<T>(sessionValues);
+            return SerializerFactory.BinarySerializer.DeserializeString<T>(sessionValues);
         }
     }
 }

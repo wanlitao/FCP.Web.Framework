@@ -34,8 +34,8 @@
       <HintPath>..\..\packages\Aspnet.WebApi.HelpPage.1.0.0.0\lib\net45\Aspnet.WebApi.HelpPage.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="FCP.Util, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\FCP.Util.1.0.0\lib\net40\FCP.Util.dll</HintPath>
+    <Reference Include="FCP.Util, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FCP.Util.1.0.4\lib\net40\FCP.Util.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">

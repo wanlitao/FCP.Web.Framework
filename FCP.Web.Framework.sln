@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCP.Web", "src\FCP.Web\FCP.Web.csproj", "{4DEFA9F8-FD36-4DE3-B73B-6C86528D66CD}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCP.Web.Cluster", "src\FCP.Web.Cluster\FCP.Web.Cluster.csproj", "{BD00DE7D-24D4-497D-B58A-6EDDE8478605}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCP.Web.Host", "src\FCP.Web.Host\FCP.Web.Host.csproj", "{755E2866-7D47-4959-AF3B-EEAF80771FA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCP.Web.Api.Tracing", "src\FCP.Web.Api.Tracing\FCP.Web.Api.Tracing.csproj", "{29FFB24C-6D0D-4B5D-B9AA-00EA10CDE225}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{755E2866-7D47-4959-AF3B-EEAF80771FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{755E2866-7D47-4959-AF3B-EEAF80771FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{755E2866-7D47-4959-AF3B-EEAF80771FA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29FFB24C-6D0D-4B5D-B9AA-00EA10CDE225}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29FFB24C-6D0D-4B5D-B9AA-00EA10CDE225}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29FFB24C-6D0D-4B5D-B9AA-00EA10CDE225}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29FFB24C-6D0D-4B5D-B9AA-00EA10CDE225}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

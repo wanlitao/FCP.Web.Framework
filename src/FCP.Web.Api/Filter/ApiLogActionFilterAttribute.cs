@@ -4,6 +4,7 @@ using System;
 using System.Linq;
 using FCP.Util;
 using System.Threading.Tasks;
+using System.Web.Http.Services;
 
 namespace FCP.Web.Api
 {
@@ -34,6 +35,7 @@ namespace FCP.Web.Api
             }
         }
 
+        #region Log Ignore
         /// <summary>
         /// 判断是否忽略记录Action日志
         /// </summary>
@@ -48,8 +50,24 @@ namespace FCP.Web.Api
             if (actionFilters.isEmpty())
                 return false;
 
-            return actionFilters.Count(m => m.Instance.GetType() == typeof(ApiLogActionIgnoreAttribute)) > 0;
+            return actionFilters.Count(checkActionFilterLogIgnore) > 0;
         }
+
+        private static bool checkActionFilterLogIgnore(FilterInfo filterInfo)
+        {
+            if (filterInfo == null)
+                return false;
+
+            if (filterInfo.Instance is ApiLogActionIgnoreAttribute)
+                return true;
+
+            var filterDecorator = filterInfo.Instance as IDecorator<ActionFilterAttribute>;
+            if (filterDecorator != null && filterDecorator.Inner is ApiLogActionIgnoreAttribute)
+                return true;            
+
+            return false;
+        }
+        #endregion
 
         /// <summary>
         /// 记录Action请求和响应

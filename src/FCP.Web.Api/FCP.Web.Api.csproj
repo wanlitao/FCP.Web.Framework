@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FCP.Core, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FCP.Core.1.0.3\lib\net45\FCP.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FCP.Util, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\FCP.Util.1.0.6\lib\net40\FCP.Util.dll</HintPath>
       <Private>True</Private>
@@ -57,6 +61,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\FCPApiConstants.cs" />
+    <Compile Include="Description\ApiExplorer\FCPApiExplorer.cs" />
+    <Compile Include="Description\ApiExplorer\FCPDoResultApiExplorer.cs" />
+    <Compile Include="Extension\FCPDoResultExtensions.cs" />
     <Compile Include="Extension\HttpHeadersExtension.cs" />
     <Compile Include="Filter\ApiExceptionFilterAttribute.cs" />
     <Compile Include="Filter\ApiLogActionFilterAttribute.cs" />

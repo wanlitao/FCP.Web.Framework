@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using FCP.Util;
+using System.Net.Http;
 
 namespace FCP.Web.Api
 {
@@ -52,6 +53,25 @@ namespace FCP.Web.Api
             }
 
             return string.Empty;
+        }
+
+        /// <summary>
+        /// 获取请求客户端Ip(包含代理检查)
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        public static string getClientIpAddressWithCheckProxy(this HttpRequestMessage request)
+        {
+            var originalClientIp = request.getClientIpAddress();
+
+            if (request == null || request.Headers.isEmpty())
+                return originalClientIp;
+
+            var firstForwardClientIp = request.Headers.GetFirstValue(FCPApiConstants.httpForwardClientIpHeaderName, true);
+            if (firstForwardClientIp.isNullOrEmpty())
+                return originalClientIp;
+
+            return firstForwardClientIp;
         }
     }
 }

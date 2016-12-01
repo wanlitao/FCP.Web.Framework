@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using FCP.Util;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Serialization;
 
 namespace FCP.Web.Api
 {
@@ -27,6 +28,8 @@ namespace FCP.Web.Api
                 dateTimeFormat = defaultDateTimeFormat;
             }            
             SerializerSettings.Converters.Add(new IsoDateTimeConverter { DateTimeFormat = dateTimeFormat });
+
+            SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
         }
 
         /// <summary>

@@ -5,7 +5,7 @@ using System.Web.Http;
 
 namespace FCP.Web.Api
 {
-    public class FCPDoResultApiExplorer : FCPApiExplorer
+    public class FCPDoResultApiExplorer : WebApiExplorer
     {
         private static readonly Type doResultGenericTypeDefinition = typeof(FCPDoResult<>);
 
@@ -13,7 +13,7 @@ namespace FCP.Web.Api
             : base(configuration)
         { }
 
-        protected override Type GetActualResponseType(Type declaredResponseType)
+        protected override Type GetCustomActualResponseType(Type declaredResponseType)
         {
             if (declaredResponseType.Is(doResultGenericTypeDefinition))
             {

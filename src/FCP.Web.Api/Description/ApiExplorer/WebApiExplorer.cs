@@ -8,11 +8,11 @@ namespace FCP.Web.Api
     /// <summary>
     /// overwrite ApiExplorer，Set Actual Response Type
     /// </summary>
-    public abstract class FCPApiExplorer : ApiExplorer, IApiExplorer
+    public abstract class WebApiExplorer : ApiExplorer, IApiExplorer
     {
         private Lazy<Collection<ApiDescription>> _apiDescriptions;
 
-        public FCPApiExplorer(HttpConfiguration configuration)
+        public WebApiExplorer(HttpConfiguration configuration)
             : base(configuration)
         {
             _apiDescriptions = new Lazy<Collection<ApiDescription>>(InitializeApiDescriptions);
@@ -43,11 +43,11 @@ namespace FCP.Web.Api
             if (responseDescription == null)
                 return;
             
-            var actualResponseType = GetActualResponseType(responseDescription.DeclaredType);
+            var actualResponseType = GetCustomActualResponseType(responseDescription.DeclaredType);
 
             responseDescription.ResponseType = actualResponseType ?? responseDescription.ResponseType;
         }
 
-        protected abstract Type GetActualResponseType(Type declaredResponseType);
+        protected abstract Type GetCustomActualResponseType(Type declaredResponseType);
     }
 }

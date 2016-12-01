@@ -60,30 +60,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\TypeActivator.cs" />
     <Compile Include="Constants\FCPApiConstants.cs" />
-    <Compile Include="Description\ApiExplorer\FCPApiExplorer.cs" />
+    <Compile Include="Description\ApiExplorer\WebApiExplorer.cs" />
     <Compile Include="Description\ApiExplorer\FCPDoResultApiExplorer.cs" />
+    <Compile Include="Descriptor\ActionDescriptor\ApiActionDescriptor.cs" />
+    <Compile Include="Descriptor\ActionDescriptor\FCPDoResultApiActionDescriptor.cs" />
     <Compile Include="Extension\FCPDoResultExtensions.cs" />
     <Compile Include="Extension\HttpHeadersExtension.cs" />
-    <Compile Include="Filter\ApiExceptionFilterAttribute.cs" />
-    <Compile Include="Filter\ApiLogActionFilterAttribute.cs" />
-    <Compile Include="Authorize\AbstractApiAuthorize.cs" />
+    <Compile Include="Extension\HttpResponseMessageExtensions.cs" />
+    <Compile Include="Filter\Descriptor\ApiActionDescriptorFilterAttribute.cs" />
+    <Compile Include="Filter\Descriptor\FCPDoResultActionDescriptorFilterAttribute.cs" />
+    <Compile Include="Filter\Exception\ApiExceptionFilterAttribute.cs" />
+    <Compile Include="Filter\Exception\FCPApiExceptionFilterAttribute.cs" />
+    <Compile Include="Filter\Log\ApiLogActionFilterAttribute.cs" />
     <Compile Include="Controller\AbstractApiController.cs" />
     <Compile Include="Description\HttpDescriptionDocumentationProvider.cs" />
     <Compile Include="Extension\HttpDescriptorExtension.cs" />
     <Compile Include="Extension\HttpRequestMessageExtension.cs" />
-    <Compile Include="Filter\ApiLogActionIgnoreAttribute.cs" />
+    <Compile Include="Filter\Log\ApiLogActionIgnoreAttribute.cs" />
+    <Compile Include="Filter\Log\FCPApiLogActionFilterAttribute.cs" />
     <Compile Include="Formatter\JsonNetMediaTypeFormatter.cs" />
     <Compile Include="Formatter\JsonContentNegotiator.cs" />
+    <Compile Include="Initializer\FCPHttpConfigurationInitializerFactory.cs" />
     <Compile Include="Initializer\HttpConfigurationInitializerFactory.cs" />
     <Compile Include="Initializer\IHttpConfigurationInitializerFactory.cs" />
+    <Compile Include="Message\CacheRequestContentMessageHandler.cs" />
+    <Compile Include="Message\TraceMessageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Trace\TraceMessageHandler.cs" />
+    <Compile Include="ResultConverter\FCPDoResultConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Authorize\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

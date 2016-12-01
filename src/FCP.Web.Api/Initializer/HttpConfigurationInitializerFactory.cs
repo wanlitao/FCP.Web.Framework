@@ -50,10 +50,7 @@ namespace FCP.Web.Api
         {
             Action<HttpConfiguration> initializer = config =>
             {
-                if (oldInitializer != null)
-                {
-                    oldInitializer(config);
-                }
+                oldInitializer?.Invoke(config);
                 config.Formatters.Remove(config.Formatters.JsonFormatter);
                 config.Formatters.Insert(0, jsonMediaTypeFormatter);  //替换默认JsonFormatter
                 if (filters.isNotEmpty())

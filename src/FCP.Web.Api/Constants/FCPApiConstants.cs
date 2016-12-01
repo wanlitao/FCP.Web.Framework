@@ -32,5 +32,10 @@
         /// 请求时间 属性Key
         /// </summary>
         public const string requestTimePropertyKey = "__action_request_time__";
+
+        /// <summary>
+        /// 请求内容 属性Key
+        /// </summary>
+        public const string requestContentPropertyKey = "__action_request_content__";
     }
 }

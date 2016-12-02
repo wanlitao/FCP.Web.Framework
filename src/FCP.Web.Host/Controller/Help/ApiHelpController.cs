@@ -10,12 +10,12 @@ namespace FCP.Web.Host
     /// FCP Help控制器
     /// </summary>
     [ApiLogActionIgnore]
-    public abstract class FCPHelpController : HelpControllerBase
+    public abstract class ApiHelpController : HelpControllerBase
     {
         private readonly HttpRouteValueDictionary helpRouteValues;
         private string baseHelpRouteUrl = null;
 
-        public FCPHelpController()
+        public ApiHelpController()
         {
             helpRouteValues = new HttpRouteValueDictionary(new { controller = helpControllerName });
             helpRouteValues.Add(HttpRoute.HttpRouteKey, true);

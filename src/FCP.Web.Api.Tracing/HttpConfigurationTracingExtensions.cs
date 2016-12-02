@@ -6,16 +6,16 @@ namespace FCP.Web.Api.Tracing
 {
     public static class HttpConfigurationTracingExtensions
     {
-        public static NLogTraceWriter EnableNLogTracing(this HttpConfiguration configuration)
+        public static HttpConfiguration UseNLogTracing(this HttpConfiguration configuration, TraceLevel minimumLevel)
         {
             if (configuration == null)
                 throw new ArgumentNullException(nameof(configuration));
 
-            NLogTraceWriter traceWriter = new NLogTraceWriter() { MinimumLevel = TraceLevel.Info };
+            NLogTraceWriter traceWriter = new NLogTraceWriter() { MinimumLevel = minimumLevel };
 
             configuration.Services.Replace(typeof(ITraceWriter), traceWriter);
 
-            return traceWriter;
+            return configuration;
         }
     }
 }

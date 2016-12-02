@@ -68,8 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controller\FCPHelpController.cs" />
+    <Compile Include="Controller\Help\FCPApiHelpController.cs" />
+    <Compile Include="Controller\Help\ApiHelpController.cs" />
+    <Compile Include="Controller\FCPApiStatusController.cs" />
     <Compile Include="Description\WebApiDescriptionDocumentationProvider.cs" />
+    <Compile Include="Extension\HttpConfigurationHelpExtensions.cs" />
+    <Compile Include="FCPWebHostConstants.cs" />
     <Compile Include="LocalHostHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SelfHost\SelfHostHelper.cs" />

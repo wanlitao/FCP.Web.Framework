@@ -34,6 +34,10 @@
       <HintPath>..\..\packages\FCP.ConsulClient.0.1.2.0\lib\net45\FCP.ConsulClient.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="FCP.Routing, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FCP.Routing.1.0.0.0\lib\net45\FCP.Routing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FCP.Util, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\FCP.Util.1.0.6\lib\net40\FCP.Util.dll</HintPath>
       <Private>True</Private>
@@ -54,13 +58,16 @@
   <ItemGroup>
     <Compile Include="ClusterConstants.cs" />
     <Compile Include="Consul\ConsulClusterProvider.cs" />
+    <Compile Include="Gateway\GatewayClusterProvider.cs" />
     <Compile Include="IClusterProvider.cs" />
+    <Compile Include="Gateway\IGatewayClusterProvider.cs" />
     <Compile Include="Models\ServiceInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

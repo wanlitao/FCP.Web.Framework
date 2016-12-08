@@ -2,7 +2,7 @@
 
 namespace FCP.Web.Cluster
 {
-    public interface IGatewayClusterProvider : IClusterProvider
+    public interface ILoadBalanceClusterProvider : IClusterProvider
     {
         /// <summary>
         /// 查询健康的服务实例

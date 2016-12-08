@@ -58,9 +58,9 @@
   <ItemGroup>
     <Compile Include="ClusterConstants.cs" />
     <Compile Include="Consul\ConsulClusterProvider.cs" />
-    <Compile Include="Gateway\GatewayClusterProvider.cs" />
+    <Compile Include="LoadBalance\LoadBalanceClusterProvider.cs" />
     <Compile Include="IClusterProvider.cs" />
-    <Compile Include="Gateway\IGatewayClusterProvider.cs" />
+    <Compile Include="LoadBalance\ILoadBalanceClusterProvider.cs" />
     <Compile Include="Models\ServiceInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

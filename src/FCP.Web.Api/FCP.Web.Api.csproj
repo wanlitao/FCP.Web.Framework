@@ -85,7 +85,7 @@
     <Compile Include="Initializer\FCPHttpConfigurationInitializerFactory.cs" />
     <Compile Include="Initializer\HttpConfigurationInitializerFactory.cs" />
     <Compile Include="Initializer\IHttpConfigurationInitializerFactory.cs" />
-    <Compile Include="Message\CacheRequestContentMessageHandler.cs" />
+    <Compile Include="Message\FCPCacheRequestContentMessageHandler.cs" />
     <Compile Include="Message\TraceMessageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResultConverter\FCPDoResultConverter.cs" />

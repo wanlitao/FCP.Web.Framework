@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace FCP.Web.Cluster
 {
-    public class GatewayClusterProvider : IGatewayClusterProvider
+    public class LoadBalanceClusterProvider : ILoadBalanceClusterProvider
     {
         private readonly IClusterProvider _innerClusterProvider;
         private readonly IRouting<ServiceInfo> _routing;
 
-        public GatewayClusterProvider(IClusterProvider clusterProvider, IRouting<ServiceInfo> routing)
+        public LoadBalanceClusterProvider(IClusterProvider clusterProvider, IRouting<ServiceInfo> routing)
         {
             if (clusterProvider == null)
                 throw new ArgumentNullException(nameof(clusterProvider));
@@ -24,7 +24,7 @@ namespace FCP.Web.Cluster
 
         public async Task<ServiceInfo> findHealthServiceAsync(string name)
         {
-            var healthServices = await _innerClusterProvider.findHealthServicesAsync(name).ConfigureAwait(false);
+            var healthServices = await findHealthServicesAsync(name).ConfigureAwait(false);
             if (healthServices.isEmpty())
                 return null;
 

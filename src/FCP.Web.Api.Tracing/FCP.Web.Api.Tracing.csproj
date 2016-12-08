@@ -61,7 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FCPTraceWriter.cs" />
-    <Compile Include="HttpConfigurationTracingExtensions.cs" />
+    <Compile Include="Extensions\HttpConfigurationTracingExtensions.cs" />
     <Compile Include="NLog\NLogTraceWriter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

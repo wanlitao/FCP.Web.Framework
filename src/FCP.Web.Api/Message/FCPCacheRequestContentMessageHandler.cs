@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 
 namespace FCP.Web.Api
 {
-    public class CacheRequestContentMessageHandler : DelegatingHandler
+    public class FCPCacheRequestContentMessageHandler : DelegatingHandler
     {
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {

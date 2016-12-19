@@ -13,6 +13,7 @@
     <copyright>$copyright$</copyright>
     <dependencies>
       <dependency id="FCP.Web.Api" version="1.2.1" />
+      <dependency id="FCP.Web.Cluster" version="1.0.5" />
     </dependencies>    
   </metadata>
 </package>

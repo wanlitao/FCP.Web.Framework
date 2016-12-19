@@ -30,6 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FCP.Configuration, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FCP.Configuration.0.5.0\lib\net45\FCP.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FCP.Configuration.Cluster, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\FCP.Configuration.Cluster.0.5.0\lib\net45\FCP.Configuration.Cluster.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FCP.Util, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\FCP.Util.1.0.6\lib\net40\FCP.Util.dll</HintPath>
       <Private>True</Private>
@@ -56,6 +64,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\UriExtensions.cs" />
+    <Compile Include="Message\FCPGatewayMessageHandler.cs" />
     <Compile Include="Message\ProxyMessageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Message\GatewayMessageHandler.cs" />
@@ -67,6 +77,10 @@
     <ProjectReference Include="..\FCP.Web.Api\FCP.Web.Api.csproj">
       <Project>{8a8db4d6-80e6-43d2-b55a-2496f9c15c1f}</Project>
       <Name>FCP.Web.Api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FCP.Web.Cluster\FCP.Web.Cluster.csproj">
+      <Project>{bd00de7d-24d4-497d-b58a-6edde8478605}</Project>
+      <Name>FCP.Web.Cluster</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

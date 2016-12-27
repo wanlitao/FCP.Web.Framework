@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\UriExtensions.cs" />
+    <Compile Include="Initializer\FCPGatewayHttpConfigurationInitializerFactory.cs" />
     <Compile Include="Message\FCPGatewayMessageHandler.cs" />
     <Compile Include="Message\ProxyMessageHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -83,6 +84,7 @@
       <Name>FCP.Web.Cluster</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

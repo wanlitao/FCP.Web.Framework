@@ -72,6 +72,7 @@
     <Compile Include="Controller\Help\ApiHelpController.cs" />
     <Compile Include="Controller\FCPApiStatusController.cs" />
     <Compile Include="Description\WebApiDescriptionDocumentationProvider.cs" />
+    <Compile Include="Extensions\HttpConfigurationInitializerExtensions.cs" />
     <Compile Include="Extensions\HttpConfigurationHelpExtensions.cs" />
     <Compile Include="FCPWebHostConstants.cs" />
     <Compile Include="LocalHostHelper.cs" />

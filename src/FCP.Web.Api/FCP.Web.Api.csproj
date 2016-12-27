@@ -62,13 +62,14 @@
   <ItemGroup>
     <Compile Include="Common\TypeActivator.cs" />
     <Compile Include="Constants\FCPApiConstants.cs" />
+    <Compile Include="Extensions\HttpDependencyExtensions.cs" />
     <Compile Include="Description\ApiExplorer\WebApiExplorer.cs" />
     <Compile Include="Description\ApiExplorer\FCPDoResultApiExplorer.cs" />
     <Compile Include="Descriptor\ActionDescriptor\ApiActionDescriptor.cs" />
     <Compile Include="Descriptor\ActionDescriptor\FCPDoResultApiActionDescriptor.cs" />
-    <Compile Include="Extension\FCPDoResultExtensions.cs" />
-    <Compile Include="Extension\HttpHeadersExtension.cs" />
-    <Compile Include="Extension\HttpResponseMessageExtensions.cs" />
+    <Compile Include="Extensions\FCPDoResultExtensions.cs" />
+    <Compile Include="Extensions\HttpHeadersExtension.cs" />
+    <Compile Include="Extensions\HttpResponseMessageExtensions.cs" />
     <Compile Include="Filter\Descriptor\ApiActionDescriptorFilterAttribute.cs" />
     <Compile Include="Filter\Descriptor\FCPDoResultActionDescriptorFilterAttribute.cs" />
     <Compile Include="Filter\Exception\ApiExceptionFilterAttribute.cs" />
@@ -76,8 +77,8 @@
     <Compile Include="Filter\Log\ApiLogActionFilterAttribute.cs" />
     <Compile Include="Controller\AbstractApiController.cs" />
     <Compile Include="Description\HttpDescriptionDocumentationProvider.cs" />
-    <Compile Include="Extension\HttpDescriptorExtension.cs" />
-    <Compile Include="Extension\HttpRequestMessageExtension.cs" />
+    <Compile Include="Extensions\HttpDescriptorExtension.cs" />
+    <Compile Include="Extensions\HttpRequestMessageExtension.cs" />
     <Compile Include="Filter\Log\ApiLogActionIgnoreAttribute.cs" />
     <Compile Include="Filter\Log\FCPApiLogActionFilterAttribute.cs" />
     <Compile Include="Formatter\JsonNetMediaTypeFormatter.cs" />

@@ -8,7 +8,7 @@ namespace FCP.Web.Host
     [ApiExplorerSettings(IgnoreApi = true)]
     public class FCPApiStatusController : ApiController
     {
-        [Route(FCPWebHostConstants.apiStatusRouteUrl)]
+        [Route(FCPWebHostConstants.ApiStatusRouteUrl)]
         public IHttpActionResult Get()
         {
             return Ok();

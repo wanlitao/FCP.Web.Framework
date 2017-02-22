@@ -5,6 +5,6 @@
         /// <summary>
         /// Api状态检测 路由Url
         /// </summary>
-        public const string apiStatusRouteUrl = "api/status";
+        public const string ApiStatusRouteUrl = "api/status";
     }
 }

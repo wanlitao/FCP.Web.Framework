@@ -19,7 +19,7 @@ namespace FCP.Web.Host
             if (string.IsNullOrEmpty(localIpv4address))
                 return null;
 
-            var uriBuilder = new UriBuilder("http", localIpv4address, freeTcpPort);
+            var uriBuilder = new UriBuilder(Uri.UriSchemeHttp, localIpv4address, freeTcpPort);
 
             return uriBuilder.Uri;
         }
@@ -34,7 +34,7 @@ namespace FCP.Web.Host
             if (port < 1)
                 return string.Empty;
 
-            return new UriBuilder("http", "+", port).ToString();
+            return new UriBuilder(Uri.UriSchemeHttp, "+", port).ToString();
         } 
     }
 }

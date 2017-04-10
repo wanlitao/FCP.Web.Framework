@@ -11,7 +11,7 @@ namespace FCP.Web.Api
             if (actionExecutedContext != null && actionExecutedContext.Exception != null)
             {
                 actionExecutedContext.Response = actionExecutedContext.Request.CreateErrorResponse(
-                    HttpStatusCode.InternalServerError, actionExecutedContext.Exception);
+                    HttpStatusCode.InternalServerError, actionExecutedContext.Exception.Message, actionExecutedContext.Exception);
             }
         }
     }

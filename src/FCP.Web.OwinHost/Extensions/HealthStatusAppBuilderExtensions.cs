@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FCP.Web.OwinHost
 {
-    public static class HealthCheckAppBuilderExtensions
+    public static class HealthStatusAppBuilderExtensions
     {
         public static IAppBuilder UseHealthStatus(this IAppBuilder app, string statusRoute)
         {

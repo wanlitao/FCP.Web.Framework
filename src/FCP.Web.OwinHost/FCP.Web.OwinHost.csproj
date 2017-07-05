@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Extensions\DictionaryExtensions.cs" />
     <Compile Include="Engine\FCPHostingEngine.cs" />
+    <Compile Include="Extensions\HealthStatusAppBuilderExtensions.cs" />
     <Compile Include="FCPOwinHostConstants.cs" />
     <Compile Include="FCPWebApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -4,6 +4,7 @@ using System.Web.Http.Description;
 
 namespace FCP.Web.Host
 {
+    [AllowAnonymous]    
     [ApiLogActionIgnore]
     [ApiExplorerSettings(IgnoreApi = true)]
     public class FCPApiStatusController : ApiController

@@ -1,14 +1,16 @@
-﻿using FCP.Web.Api;
+﻿using FCP.Util;
+using FCP.Web.Api;
 using System.Net.Http;
+using System.Web.Http;
 using System.Web.Http.Routing;
 using WebApi.HelpPage.Controllers;
-using FCP.Util;
 
 namespace FCP.Web.Host
 {
     /// <summary>
     /// FCP Help控制器
     /// </summary>
+    [AllowAnonymous]
     [ApiLogActionIgnore]
     public abstract class ApiHelpController : HelpControllerBase
     {

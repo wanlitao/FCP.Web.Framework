@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\AddressAppBuilderExtensions.cs" />
     <Compile Include="Extensions\DictionaryExtensions.cs" />
     <Compile Include="Engine\FCPHostingEngine.cs" />
     <Compile Include="Extensions\HealthStatusAppBuilderExtensions.cs" />

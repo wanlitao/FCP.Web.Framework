@@ -1,10 +1,9 @@
-﻿using FCP.Util;
-using FCP.Util.Async;
+﻿using FCP.Util.Async;
 using FCP.Web.Cluster;
 using Microsoft.Owin.BuilderProperties;
 using Owin;
 using System;
-using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 
 namespace FCP.Web.OwinHost
@@ -28,40 +27,6 @@ namespace FCP.Web.OwinHost
 
         #region Cluster Configuration
 
-        #region App Rpc Address
-        private static Uri GetAppRpcAddressUri(AppProperties appProperties)
-        {
-            var addressList = appProperties.Addresses.List;
-            foreach (IDictionary<string, object> current in addressList)
-            {
-                var host = current.Get<string>("host");
-                if (CheckRpcValidHost(host))
-                {
-                    var scheme = current.Get<string>("scheme");
-                    var port = TypeHelper.parseInt(current.Get<string>("port"));
-
-                    return new UriBuilder(scheme, host, port).Uri;
-                }
-            }
-
-            return null;
-        }
-
-        private static bool CheckRpcValidHost(string host)
-        {
-            if (host.isNullOrEmpty())
-                return false;
-
-            if (StringUtil.compareIgnoreCase(host, "*") || StringUtil.compareIgnoreCase(host, "+"))
-                return false;
-
-            if (StringUtil.compareIgnoreCase(host, "localhost") || StringUtil.compareIgnoreCase(host, "127.0.0.1"))
-                return false;
-
-            return true;
-        }
-        #endregion
-
         #region Cluster Provider
         private static IClusterProvider GetClusterProvider(AppProperties appProperties)
         {
@@ -77,14 +42,14 @@ namespace FCP.Web.OwinHost
             if (clusterProvider == null)
                 throw new ArgumentException("not found cluster provider instance");
 
-            ConfigurationClusterRegister(clusterProvider, properties);
+            ConfigurationClusterRegister(app, clusterProvider, properties);
             ConfigurationClusterDeregister(clusterProvider, properties);
         }
 
-        private void ConfigurationClusterRegister(IClusterProvider clusterProvider, AppProperties appProperties)
+        private void ConfigurationClusterRegister(IAppBuilder app, IClusterProvider clusterProvider, AppProperties appProperties)
         {
             var token = appProperties.Get<CancellationToken>(FCPOwinHostConstants.AppProperty_OnStarting);
-            var addressUri = GetAppRpcAddressUri(appProperties);
+            var addressUri = app.GetAppRpcAddresses().FirstOrDefault();
             token.Register(() =>
             {
                 var clusterAppId = AsyncFuncHelper.RunSync(() => clusterProvider.registerServiceAsync(AppCode, addressUri, StatusUrl));
